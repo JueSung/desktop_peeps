@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce7ysqkjqmel7"]
+
+[ext_resource type="Script" uid="uid://2dvg3ib233ku" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c7fg8x37h56oj" path="res://images/Screenshot 2025-09-14 022151.png" id="1_ig7tw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(361, 230)
+texture = ExtResource("1_ig7tw")
+
+[node name="Transparency button" type="Button" parent="."]
+offset_left = 807.0
+offset_top = 93.0
+offset_right = 940.0
+offset_bottom = 178.0
+text = "Transparency"
+
+[connection signal="pressed" from="Transparency button" to="." method="_on_transparency_button_pressed"]
