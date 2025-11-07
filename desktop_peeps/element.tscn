@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7qrekhy1qigo"]
+
+[ext_resource type="Script" uid="uid://cnf50jx74a503" path="res://element.gd" id="1_pmcjm"]
+[ext_resource type="Script" uid="uid://dl1xudgh4iohh" path="res://element_area.gd" id="2_tx7r8"]
+[ext_resource type="Texture2D" uid="uid://c7fg8x37h56oj" path="res://images/Screenshot 2025-09-14 022151.png" id="2_vnigt"]
+
+[node name="Element" type="Node2D"]
+script = ExtResource("1_pmcjm")
+
+[node name="element_area" type="Area2D" parent="."]
+script = ExtResource("2_tx7r8")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="element_area"]
+polygon = PackedVector2Array(-104, -95, 104, -95, 104, 96, -104, 95)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vnigt")
