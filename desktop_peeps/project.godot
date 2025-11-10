@@ -13,13 +13,14 @@ config_version=5
 config/name="desktop_peeps"
 run/main_scene="uid://ce7ysqkjqmel7"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="uid://1oavpkj65mu2"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=2
 window/size/resizable=false
 window/size/borderless=true
 window/size/always_on_top=true

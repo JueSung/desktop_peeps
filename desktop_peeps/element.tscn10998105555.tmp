@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7qrekhy1qigo"]
+[gd_scene load_steps=31 format=3 uid="uid://b7qrekhy1qigo"]
 
 [ext_resource type="Script" uid="uid://cnf50jx74a503" path="res://element.gd" id="1_pmcjm"]
 [ext_resource type="Script" uid="uid://dl1xudgh4iohh" path="res://element_area.gd" id="2_tx7r8"]
+[ext_resource type="Texture2D" uid="uid://c7fg8x37h56oj" path="res://images/Screenshot 2025-09-14 022151.png" id="2_vnigt"]
 [ext_resource type="Texture2D" uid="uid://dxtyst2kfpu5v" path="res://images/1_1.png" id="4_degyn"]
 [ext_resource type="Texture2D" uid="uid://dek2nv4pdm3b1" path="res://images/1_2.png" id="5_moq7m"]
 [ext_resource type="Texture2D" uid="uid://cm1fussmme2d6" path="res://images/1_3.png" id="6_ppud3"]
@@ -186,8 +187,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_degyn"]
+load_path = "res://.godot/imported/Anna.jpg-b06a1c0416292fa7054a7611ea0cf6e1.ctex"
+
 [node name="Element" type="Node2D"]
 script = ExtResource("1_pmcjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_vnigt")
 
 [node name="element_area" type="Area2D" parent="."]
 script = ExtResource("2_tx7r8")
@@ -228,7 +236,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7g8pq")
 button_mask = 2
 
 [node name="Button" type="Button" parent="SettingsButton"]
-layout_mode = 0
 offset_right = 160.0
 offset_bottom = 190.0
 mouse_filter = 1
@@ -262,6 +269,30 @@ scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_tx7r8")
 animation = &"1"
 offset = Vector2(260, 780)
+
+[node name="Settings" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 80.0
+offset_top = -190.0
+offset_right = 180.0
+offset_bottom = -90.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(83, 88)
+scale = Vector2(0.01, 0.01)
+texture = SubResource("CompressedTexture2D_degyn")
+region_enabled = true
+region_rect = Rect2(250, 1100, 1500, 1600)
+
+[node name="SizeSlider" type="VSlider" parent="."]
+offset_left = 80.0
+offset_top = -95.0
+offset_right = 96.0
+offset_bottom = 95.0
+min_value = 1.0
+value = 10.0
 
 [connection signal="pressed" from="SettingsButton" to="." method="settings_button"]
 [connection signal="pressed" from="SettingsButton/Button" to="." method="button_pressed"]
