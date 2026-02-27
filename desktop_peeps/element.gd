@@ -221,7 +221,7 @@ func get_shape():
 	return shape_type
 
 func mouse_entered_area() -> void:
-	#set_process(true)
+	set_process(true)
 	if settings_visible:
 		Input.set_default_cursor_shape(11)
 	else:
@@ -230,7 +230,8 @@ func mouse_entered_area() -> void:
 
 
 func mouse_exited_area() -> void:
-	#set_process(false)
+	if not dragging:
+		set_process(false)
 	Input.set_default_cursor_shape(0)
 
 
