@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b7qrekhy1qigo"]
+[gd_scene load_steps=27 format=3 uid="uid://b7qrekhy1qigo"]
 
 [ext_resource type="Script" uid="uid://cnf50jx74a503" path="res://element.gd" id="1_pmcjm"]
 [ext_resource type="Script" uid="uid://dl1xudgh4iohh" path="res://element_area.gd" id="2_tx7r8"]
@@ -168,7 +168,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_v48eh")
 }],
-"loop": false,
+"loop": true,
 "name": &"3",
 "speed": 12.0
 }, {
@@ -213,22 +213,24 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Element" type="Node2D" unique_id=1418041083]
+[node name="Element" type="Node2D"]
 script = ExtResource("1_pmcjm")
 
-[node name="element_area" type="Area2D" parent="." unique_id=1796726857]
+[node name="element_area" type="Area2D" parent="."]
 script = ExtResource("2_tx7r8")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="element_area" unique_id=1738032299]
-polygon = PackedVector2Array(-80, -95, 80, -95, 80, 95, -80, 95)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="element_area"]
+polygon = PackedVector2Array(-90, -95, 90, -95, 90, 95, -90, 95)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2002351803]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_tx7r8")
 animation = &"Working_Moogie"
-offset = Vector2(140, -36.667)
+frame = 8
+frame_progress = 0.729172
+offset = Vector2(120, -60)
 
-[node name="mouse_blocker" type="Control" parent="." unique_id=1656418080]
+[node name="mouse_blocker" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 10.0
@@ -236,14 +238,14 @@ offset_top = -185.0
 offset_right = 150.0
 offset_bottom = -105.0
 
-[node name="working_mode_button" type="Button" parent="." unique_id=1079182861]
+[node name="working_mode_button" type="Button" parent="."]
 offset_left = 10.0
 offset_top = -140.0
 offset_right = 150.0
 offset_bottom = -105.0
 text = "Working Mode"
 
-[node name="idle_mode_button" type="Button" parent="." unique_id=150214486]
+[node name="idle_mode_button" type="Button" parent="."]
 offset_left = 10.0
 offset_top = -185.0
 offset_right = 150.0

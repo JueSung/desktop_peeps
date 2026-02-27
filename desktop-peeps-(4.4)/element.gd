@@ -29,12 +29,10 @@ func set_mouse_passthrough_window():
 
 func _ready():
 	global_position = Vector2(500, 500)
-	set_shape("idle")	
-	$AnimatedSprite2D.animation = "1"
+	set_shape("idle")
 	
 	$working_mode_button.visible = false
 	$idle_mode_button.visible = false
-	
 	
 
 # for dragging/sizing
@@ -83,7 +81,6 @@ func button_pressed():
 	if r == 1:
 		type = "1 expanded"
 	play_animation(str(r), type)
-	print("RAN")
 	
 	"""$AnimatedSprite2D.animation = str(r) # animations are named 1,2,3
 	if r == 1:
@@ -180,18 +177,18 @@ func set_shape(type):
 		"settings_working":
 			shape_type = "settings_moogie"
 			$element_area/CollisionShape2D.polygon = PackedVector2Array(
-				[size_factor * Vector2(-WIDTH, -HEIGHT*1.2),
-				size_factor * Vector2(0,-HEIGHT*1.2),
+				[size_factor * Vector2(-WIDTH, -HEIGHT),
+				size_factor * Vector2(0,-HEIGHT),
 				size_factor * Vector2(0,-2 * HEIGHT),
 				size_factor * Vector2(2 * WIDTH, -2 * HEIGHT),
-				size_factor * Vector2(2 * WIDTH, -HEIGHT * 1.2),
-				size_factor * Vector2(WIDTH*2.2, -HEIGHT * 1.2),
-				size_factor * Vector2(WIDTH*2.2, HEIGHT),
+				size_factor * Vector2(2 * WIDTH, 0),
+				size_factor * Vector2(WIDTH*2, 0),
+				size_factor * Vector2(WIDTH*2, HEIGHT),
 				size_factor * Vector2(-WIDTH, HEIGHT)
 				]
 			)
-			$AnimatedSprite2D.scale = Vector2(.3, .3)
-			$AnimatedSprite2D.offset = Vector2(140, -37)
+			$AnimatedSprite2D.scale = Vector2(.9, .9)
+			$AnimatedSprite2D.offset = Vector2(260, 780)
 		"1 expanded":
 			shape_type = "1 expanded"
 			$element_area/CollisionShape2D.polygon = PackedVector2Array(
@@ -204,13 +201,13 @@ func set_shape(type):
 			$AnimatedSprite2D.offset = Vector2(260, 780)
 		"Working_Moogie":
 			$element_area/CollisionShape2D.polygon = PackedVector2Array(
-				[size_factor * Vector2(-WIDTH, -HEIGHT*1.2),
-				size_factor * Vector2(WIDTH * 2.2, -HEIGHT*1.2),
-				size_factor * Vector2(WIDTH * 2.2, HEIGHT),
+				[size_factor * Vector2(-WIDTH, -HEIGHT * 1.8),
+				size_factor * Vector2(WIDTH * 2, -HEIGHT * 1.8),
+				size_factor * Vector2(WIDTH * 2, HEIGHT),
 				size_factor * Vector2(-WIDTH, HEIGHT)]
 			)
 			$AnimatedSprite2D.scale = Vector2(.3, .3)
-			$AnimatedSprite2D.offset = Vector2(140, -37)
+			$AnimatedSprite2D.offset = Vector2(120, -60)
 		"Head_Smashing_Moogie":
 			pass
 		_:
